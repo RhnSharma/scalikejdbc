@@ -880,6 +880,7 @@ class CodeGenerator(table: Table, specifiedClassName: Option[String] = None)(imp
           |import scalikejdbc.specs2.mutable.AutoRollback
           |import org.specs2.mutable._
           |import scalikejdbc._
+          |import scala.language.postfixOps
           |$timeImport
           |
           |class %className%Spec extends Specification {

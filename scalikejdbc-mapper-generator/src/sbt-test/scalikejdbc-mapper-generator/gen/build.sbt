@@ -49,7 +49,7 @@ TaskKey[Unit]("createTestDatabase") := {
 
 val scalikejdbcVersion = System.getProperty("plugin.version")
 
-crossScalaVersions := List("2.13.6", "2.12.14")
+crossScalaVersions := List("2.13.6", "2.12.14", "3.0.1-RC1")
 
 scalacOptions ++= Seq("-Xlint", "-language:_", "-deprecation", "-unchecked")
 
@@ -63,7 +63,7 @@ libraryDependencies ++= Seq(
   "mysql"               %  "mysql-connector-java"             % System.getProperty("mysql.version"),
   "org.postgresql"      %  "postgresql"                       % System.getProperty("postgresql.version"),
   "org.scalatest"       %% "scalatest"                        % System.getProperty("scalatest.version") % "test",
-  "org.specs2"          %% "specs2-core"                      % System.getProperty("specs2.version") % "test"
+  "org.specs2"          %% "specs2-core"                      % System.getProperty("specs2.version") % "test" cross CrossVersion.for3Use2_13
 )
 
 TaskKey[Unit]("generateCodeForIssue339") := {
